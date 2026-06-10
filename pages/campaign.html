@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헌혈 예약하기 — LIFE DROP 헌혈 나눔센터</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="../css/style.css?v=5">
+</head>
+<body data-page="campaign">
+
+<!-- 공통 헤더 -->
+<div id="header"></div>
+
+<main>
+  <!-- 예약 히어로 -->
+  <section class="reserve-hero">
+    <!-- 히어로 배경 이미지 슬롯 — 이미지 업로드 후:
+         style="background:url(../images/sub/reserve_bg.png) center/cover no-repeat;border:0" -->
+    <div class="reserve-hero__bg img-box" data-img="images/sub/reserve_bg.png"></div>
+    <div class="inner reserve-hero__inner">
+      <div class="reserve-hero__text">
+        <span class="sub-hero__label">LIFE DROP</span>
+        <h2 class="reserve-hero__title">헌혈 <span class="point">예약하기</span></h2>
+        <p class="reserve-hero__desc">당신의 10분이 누군가의 생명을 살립니다.<br>지금, 쉽고 간편하게 예약해보세요.</p>
+        <a href="#step1" class="btn btn--main">예약 시작하기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 예약 단계 -->
+  <section class="section reserve">
+    <div class="inner">
+
+      <!-- 01 날짜와 시간 선택 (나란히) -->
+      <div class="rstep" id="step1" data-reveal>
+        <div class="rstep__info">
+          <span class="rstep__num">01</span>
+          <h3 class="rstep__title">날짜와 시간 선택</h3>
+          <p class="rstep__desc">예약 가능한 날짜와 시간을<br>선택해주세요.</p>
+        </div>
+        <div class="rstep__body">
+          <div class="rstep__cols">
+            <div class="cal" id="calendar">
+              <div class="cal__head">
+                <button type="button" class="cal__nav" id="calPrev" aria-label="이전 달">←</button>
+                <strong class="cal__month" id="calMonth"></strong>
+                <button type="button" class="cal__nav" id="calNext" aria-label="다음 달">→</button>
+              </div>
+              <div class="cal__grid" id="calGrid"></div>
+            </div>
+            <div class="times-wrap">
+              <strong class="times-title">예약 가능 시간</strong>
+              <div class="times" id="timeList"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 헌혈센터 선택 -->
+      <div class="rstep" id="step2" data-reveal>
+        <div class="rstep__info">
+          <span class="rstep__num">02</span>
+          <h3 class="rstep__title">헌혈센터 선택</h3>
+          <p class="rstep__desc">가까운 헌혈의집을<br>선택해주세요.</p>
+        </div>
+        <div class="rstep__body">
+          <div class="centers" id="centerList"></div>
+        </div>
+      </div>
+
+      <!-- 예약 확인 -->
+      <div class="rsummary" id="summary" data-reveal>
+        <ul class="rsummary__list">
+          <li><span class="rsummary__label">예약 날짜</span><strong class="rsummary__value" id="sumDate">-</strong></li>
+          <li><span class="rsummary__label">예약 시간</span><strong class="rsummary__value" id="sumTime">-</strong></li>
+          <li><span class="rsummary__label">헌혈의집</span><strong class="rsummary__value" id="sumCenter">-</strong></li>
+        </ul>
+        <button type="button" class="btn btn--main rsummary__btn" id="reserveBtn" disabled>예약 완료하기</button>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- 공통 푸터 -->
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../include/header.js"></script>
+<script src="../include/footer.js"></script>
+<script src="../js/include.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/reserve.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIFE DROP 라이프드롭 — 헌혈 나눔센터</title>
+<meta name="description" content="오늘 당신의 10분이 누군가의 생명을 살렸습니다. 대한민국 헌혈 인식 개선 공공 캠페인 LIFE DROP">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body class="is-loading" data-page="main">
+
+<!-- 공통 헤더 (include/header.html 로드) -->
+<div id="header"></div>
+
+<main>
+  <!-- ================= 히어로 (Swiper) ================= -->
+  <section class="hero">
+    <!-- 히어로 배경 (nav~히어로 전체, 슬라이드별 크로스페이드)
+         순서 = 슬라이드 순서. 슬라이드별로 다르게 하려면 각 div에
+         style="background-image:url(images/main/다른이미지.png)" 추가 -->
+    <div class="hero__bgs">
+      <div class="hero__bg"></div>
+      <div class="hero__bg"></div>
+      <div class="hero__bg"></div>
+    </div>
+
+    <div class="swiper hero-swiper" id="heroSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- slide 1 -->
+        <div class="swiper-slide">
+          <div class="hero-slide__inner">
+            <div class="hero-slide__text">
+              <span class="hero-slide__badge">LIFE DROP 캠페인</span>
+              <h2 class="hero-slide__title">오늘 당신의 <span class="point">10분</span>이<br>누군가의 생명을<br>살렸습니다.</h2>
+              <p class="hero-slide__desc">헌혈은 생명을 나누는 가장 쉬운 방법입니다.</p>
+              <div class="hero-slide__btn">
+                <a href="pages/campaign.html" class="btn btn--point">헌혈 예약하기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- slide 2 -->
+        <div class="swiper-slide">
+          <div class="hero-slide__inner">
+            <div class="hero-slide__text">
+              <span class="hero-slide__badge">왜 헌혈인가</span>
+              <h2 class="hero-slide__title">혈액은 어떤 기술로도<br><span class="point">인공적으로</span> 만들 수<br>없습니다.</h2>
+              <p class="hero-slide__desc">오직 사람만이 줄 수 있는 선물, 지금 함께해 주세요.</p>
+              <div class="hero-slide__btn">
+                <a href="pages/about.html" class="btn btn--point">자세히 보기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- slide 3 -->
+        <div class="swiper-slide">
+          <div class="hero-slide__inner">
+            <div class="hero-slide__text">
+              <span class="hero-slide__badge">헌혈 1회의 기적</span>
+              <h2 class="hero-slide__title">헌혈 1회로<br><span class="point">3명</span>의 생명을<br>도울 수 있어요.</h2>
+              <p class="hero-slide__desc">전혈 1회는 최대 3명의 치료에 활용됩니다.</p>
+              <div class="hero-slide__btn">
+                <a href="pages/guide.html" class="btn btn--point">헌혈 가이드</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 진행 컨트롤: 프로그레스바 + fraction + 화살표 -->
+      <div class="hero__controls">
+        <span class="hero__fraction"><span class="current" id="heroCurrent">01</span> <span class="total">/ <span id="heroTotal">03</span></span></span>
+        <div class="hero__progress"><div class="hero__progress-fill" id="heroProgress"></div></div>
+        <div class="hero__nav">
+          <button type="button" id="heroPrev" aria-label="이전 슬라이드">←</button>
+          <button type="button" id="heroNext" aria-label="다음 슬라이드">→</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 혈액 보유 현황 -->
+    <div class="blood-stock" data-reveal>
+      <div class="blood-stock__card">
+        <div class="blood-stock__head">
+          <strong class="blood-stock__title">혈액 보유 현황</strong>
+          <span class="blood-stock__legend" id="bloodStockLegend">[5일 미만] 관심 단계</span>
+        </div>
+        <!-- js/blood-data.js 의 수치로 자동 렌더링 -->
+        <ul class="blood-stock__list" id="bloodStockList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 왜 헌혈인가? ================= -->
+  <section class="section why" id="why">
+    <div class="inner">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-head__title">왜 <span class="point">한 번</span>으로는 부족할까요?</h2>
+        <p class="sec-head__desc">
+          혈액은 보관 기간이 짧습니다.<br>
+          오늘의 헌혈이 내일도 필요한 이유입니다.
+        </p>
+      </div>
+
+      <div class="why__grid" data-reveal-group>
+        <div class="why-card">
+          <strong class="why-card__num"><span class="counter" data-count="3.2" data-decimal="1">0</span>일</strong>
+          <span class="why-card__label">현재 전국 평균 혈액 보유량</span>
+          <div class="gauge"><div class="gauge__fill" data-gauge="64"></div></div>
+          <span class="gauge-caption">5일 미만 관심 단계</span>
+        </div>
+
+        <div class="why-card why-card--center">
+          <strong class="why-card__num"><span class="counter" data-count="3">0</span>명</strong>
+          <span class="why-card__label">헌혈 1회로 도울 수 있는 사람</span>
+          <ul class="why-card__people">
+            <li>외과수술<strong>1명</strong></li>
+            <li>항암치료<strong>1명</strong></li>
+            <li>혈액질환<strong>1명</strong></li>
+          </ul>
+          <span class="why-card__sub">전혈 1회(320~400ml)는 적혈구·혈소판·혈장으로<br>분리되어 최대 3명의 치료에 활용됩니다.</span>
+        </div>
+
+        <div class="why-card">
+          <strong class="why-card__num"><span class="counter" data-count="2.7" data-decimal="1">0</span>%</strong>
+          <span class="why-card__label">대한민국 헌혈 참여율</span>
+          <div class="gauge"><div class="gauge__fill" data-gauge="54"></div></div>
+          <span class="gauge-caption">WHO 권장 5%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 헌혈 절차 ================= -->
+  <section class="section steps-section" id="guide">
+    <div class="inner">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-head__title">헌혈, 생각보다 <span class="point">어렵지 않아요</span></h2>
+        <p class="sec-head__desc">
+          처음이라도 괜찮습니다.<br>
+          단 10분이면 충분합니다. 천천히 함께 시작해 볼까요?
+        </p>
+      </div>
+
+      <div class="steps__list">
+        <div class="step" data-reveal>
+          <div class="step__visual">
+            <img src="images/main/sec2_1.png" alt="모바일 앱으로 간편 예약">
+          </div>
+          <div class="step__text">
+            <span class="step__num">01</span>
+            <h3 class="step__title">간편 예약</h3>
+            <p class="step__desc">
+              앱 또는 웹에서 내 주변 헌혈의집을 찾고<br>
+              원하는 시간에 예약합니다.<br>
+              대기 없이 바로 입장 가능합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="step" data-reveal>
+          <div class="step__visual">
+            <img src="images/main/sec2_2.png" alt="방문과 문진">
+          </div>
+          <div class="step__text">
+            <span class="step__num">02</span>
+            <h3 class="step__title">방문&문진</h3>
+            <p class="step__desc">
+              신분증을 지참해 방문합니다.<br>
+              간단한 건강 문진과 혈압·혈색소 측정 후<br>
+              헌혈 종류를 결정합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="step" data-reveal>
+          <div class="step__visual">
+            <img src="images/main/sec2_3.png" alt="헌혈 완료 기념 카드">
+          </div>
+          <div class="step__text">
+            <span class="step__num">03</span>
+            <h3 class="step__title">10분 헌혈 완료</h3>
+            <p class="step__desc">
+              전혈 헌혈은 약 10분이 소요됩니다.<br>
+              혈소판은 40~60분 소요됩니다.<br>
+              헌혈 후 간식과 기념품도 받아가세요.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 수혜자 스토리 ================= -->
+  <section class="section story" id="story">
+    <div class="inner">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-head__title">혈액 나눔 <span class="point">이렇게 이어지고</span> 있어요</h2>
+        <p class="sec-head__desc">
+          헌혈자와 수혜자의 이야기,<br>
+          그리고 생명을 잇는 손길들을 함께 나눕니다.
+        </p>
+      </div>
+
+      <div class="story__banner" data-reveal>
+        <div class="story__bg"></div>
+        <div class="story__overlay"></div>
+        <div class="story__content">
+          <span class="story__tag">수혜자 이야기</span>
+          <h3 class="story__title">엄마의 수술을 지켜준,<br>이름 모를 누군가의 헌혈</h3>
+          <p class="story__desc">
+            갑작스러운 사고로 긴급 수술이 필요했던 이수진 씨의 어머니.
+            그 순간 병원에 공급된 혈액이 없었다면 지금의 일상은 없었을지도 모릅니다.
+          </p>
+          <p class="story__quote">
+            가족은 말합니다.<br>
+            “우리는 누군가의 선의를 평생 잊지 못할 거예요.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SNS ================= -->
+  <section class="section sns" id="sns">
+    <div class="inner">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-head__title">SNS</h2>
+        <p class="sec-head__desc">
+          나눔에 참여한 캠페인 참여자들의 SNS 입니다.<br>
+          소중하고 나눔을 잇는 소중한 순간들을 함께 해요.
+        </p>
+      </div>
+
+      <div class="sns__grid" data-reveal-group>
+        <article class="sns-card">
+          <div class="sns-card__visual">
+            <span class="sns-card__like">♥</span>
+            <img src="images/main/sec4_1.jpg" alt="헌혈 참여자 SNS 사진">
+          </div>
+          <div class="sns-card__body">
+            <p class="sns-card__tags">#헌혈 #나눔기부 #이의있습니다</p>
+          </div>
+        </article>
+        <article class="sns-card">
+          <div class="sns-card__visual">
+            <span class="sns-card__like">♥</span>
+            <img src="images/main/sec4_2.jpg" alt="수혜자 가족 SNS 사진">
+          </div>
+          <div class="sns-card__body">
+            <p class="sns-card__tags">#감사합니다 #수혜자후기 #갑작스러운 사고로 인해…</p>
+          </div>
+        </article>
+        <article class="sns-card">
+          <div class="sns-card__visual">
+            <span class="sns-card__like">♥</span>
+            <img src="images/main/sec4_3.jpg" alt="긴급 헌혈 캠페인 SNS 사진">
+          </div>
+          <div class="sns-card__body">
+            <p class="sns-card__tags">#긴급헌혈사이렌 #대한민국건강해야</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 캠페인 참여 ================= -->
+  <section class="section join" id="join">
+    <div class="inner">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-head__title">캠페인 <span class="point">참여</span></h2>
+        <p class="sec-head__desc">
+          원하는 날짜/시간/장소에 예약 가능합니다.<br>
+          나의 가장 가까운 헌혈의 집을 찾아보세요.<br>
+          예약 시에는 대기 없이 바로 입장 가능합니다.
+        </p>
+      </div>
+
+      <div class="join__grid" data-reveal-group>
+        <a href="pages/campaign.html#center" class="join-card">
+          <div class="join-card__visual">
+            <img src="images/main/sec5_1.png" alt="헌혈 센터 위치 캐릭터">
+          </div>
+          <div class="join-card__text">
+            <h3 class="join-card__title">내 주변 헌혈 센터 찾기</h3>
+            <p class="join-card__desc">위치 정보를 기반으로 가장 가까운<br>헌혈 센터를 확인할 수 있어요.</p>
+          </div>
+          <span class="join-card__arrow">→</span>
+        </a>
+        <a href="pages/campaign.html" class="join-card">
+          <div class="join-card__visual">
+            <img src="images/main/sec5_2.png" alt="모바일 예약 캐릭터">
+          </div>
+          <div class="join-card__text">
+            <h3 class="join-card__title">헌혈 예약하러 가기</h3>
+            <p class="join-card__desc">내가 원하는 센터, 날짜를 선택해<br>빠르게 헌혈 예약이 가능합니다.</p>
+          </div>
+          <span class="join-card__arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 공통 푸터 (include/footer.html 로드) -->
+<div id="footer"></div>
+
+<!-- 라이브러리 (JS만 사용 / CSS는 직접 작성) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="include/header.js?v=3"></script>
+<script src="include/footer.js?v=3"></script>
+<script src="js/blood-data.js?v=3"></script>
+<script src="js/include.js?v=3"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>

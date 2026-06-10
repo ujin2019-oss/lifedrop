@@ -1,0 +1,72 @@
+/* ==========================================================
+  공통 헤더 (include/header.js)
+  - file:// 로 열어도 동작하는 JS 방식 include
+  - js/include.js 가 #header 영역에 삽입합니다.
+
+  ★ 메뉴 수정 방법 ---------------------------------------
+  1) 상단 고정 메뉴  : [GNB 메뉴] 의 <li> 추가/수정
+     - href="/index.html#섹션id" → 메인 해당 섹션으로 이동
+     - 섹션 id: #why(왜 헌혈인가) #guide(헌혈 가이드)
+               #story(나눔 Story) #join(캠페인 참여)
+  2) 햄버거 모달 메뉴: [모달 메뉴] 의 <li> 추가/수정
+  ※ HTML은 백틱(`) 안에 그대로 작성하면 됩니다.
+========================================================== */
+window.HEADER_HTML = `
+<header class="header" id="siteHeader">
+  <div class="header__inner">
+
+    <!-- 로고 -->
+    <h1 class="header__logo">
+      <a href="/index.html">
+        <img class="logo-img" src="/images/main/logo.png" alt="LIFE DROP 혈액나눔센터">
+      </a>
+    </h1>
+
+    <!-- ▼▼▼ [GNB 메뉴] 상단 고정 메뉴 — 메인 섹션 이동 ▼▼▼ -->
+    <nav class="gnb" id="gnb" aria-label="주 메뉴">
+      <ul class="gnb__list">
+        <li class="gnb__item"><a href="/index.html#why">왜 헌혈인가?</a></li>
+        <li class="gnb__item"><a href="/index.html#guide">헌혈 가이드</a></li>
+        <li class="gnb__item"><a href="/index.html#story">나눔 Story</a></li>
+        <li class="gnb__item"><a href="/index.html#join">캠페인 참여</a></li>
+      </ul>
+    </nav>
+    <!-- ▲▲▲ [GNB 메뉴] 끝 ▲▲▲ -->
+
+    <div class="header__util">
+      <a href="/pages/campaign.html" class="btn btn--point btn--sm header__cta">헌혈 예약</a>
+      <!-- 햄버거 버튼 (모달 열기) -->
+      <button type="button" class="hamburger" id="hamburger" aria-label="전체 메뉴 열기" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 햄버거 전체 메뉴 모달 -->
+<div class="menu-modal" id="menuModal" aria-hidden="true">
+  <div class="menu-modal__dim" id="menuModalDim"></div>
+  <div class="menu-modal__panel" role="dialog" aria-label="전체 메뉴">
+
+    <!-- 닫기(X) 버튼 -->
+    <button type="button" class="menu-modal__close" id="menuModalClose" aria-label="메뉴 닫기">
+      <span></span><span></span>
+    </button>
+
+    <strong class="menu-modal__title">MENU</strong>
+
+    <!-- ▼▼▼ [모달 메뉴] 햄버거 모달 메뉴 ▼▼▼ -->
+    <ul class="menu-modal__list">
+      <li><a href="/pages/news.html"><em>01</em>캠페인 소식</a></li>
+      <li><a href="/pages/campaign.html#center"><em>02</em>내 주변 헌혈 센터 찾기</a></li>
+      <li><a href="/pages/campaign.html"><em>03</em>헌혈 예약하러 가기</a></li>
+    </ul>
+    <!-- ▲▲▲ [모달 메뉴] 끝 ▲▲▲ -->
+
+    <div class="menu-modal__footer">
+      <span class="menu-modal__cs">고객센터 <strong>1660-3705</strong></span>
+      <span class="menu-modal__time">연중무휴 09:00 ~ 18:00</span>
+    </div>
+  </div>
+</div>
+`;
