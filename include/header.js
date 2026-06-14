@@ -34,7 +34,7 @@ window.HEADER_HTML = `
     <!-- ▲▲▲ [GNB 메뉴] 끝 ▲▲▲ -->
 
     <div class="header__util">
-      <a href="/pages/campaign.html" class="btn btn--point btn--sm header__cta">헌혈 예약</a>
+      <a href="/pages/campaign.html" class="btn btn--point btn--sm header__cta">헌혈 예약하러 가기</a>
       <!-- 햄버거 버튼 (모달 열기) -->
       <button type="button" class="hamburger" id="hamburger" aria-label="전체 메뉴 열기" aria-expanded="false">
         <span></span><span></span><span></span>

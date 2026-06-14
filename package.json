@@ -1,0 +1,20 @@
+{
+  "name": "lifedrop",
+  "version": "1.0.0",
+  "description": "`index.html` 더블클릭(file://)으로 바로 실행됩니다. (Live Server도 가능)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ujin2019-oss/lifedrop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ujin2019-oss/lifedrop/issues"
+  },
+  "homepage": "https://github.com/ujin2019-oss/lifedrop#readme"
+}

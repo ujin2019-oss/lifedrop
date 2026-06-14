@@ -26,15 +26,52 @@
     </div>
   </section>
 
-  <!-- 서브 콘텐츠 (디자인 확정 후 작업 예정) -->
-  <section class="sub-content">
+  <!-- 캠페인 소식 게시판 -->
+  <section class="sub-content board" id="newsBoard">
     <div class="inner">
-      <div class="sub-placeholder">
-        <strong>캠페인 소식 페이지 준비 중</strong>
-        디자인이 확정되면 이 영역에 콘텐츠가 들어갑니다.
+
+      <!-- 상단: 카테고리 탭 + 검색 -->
+      <div class="board__top" data-reveal>
+        <ul class="board__tabs" id="boardTabs">
+          <li><button type="button" class="board__tab is-active" data-cat="all">전체</button></li>
+          <li><button type="button" class="board__tab" data-cat="notice">공지사항</button></li>
+          <li><button type="button" class="board__tab" data-cat="campaign">캠페인</button></li>
+          <li><button type="button" class="board__tab" data-cat="event">이벤트</button></li>
+          <li><button type="button" class="board__tab" data-cat="press">보도자료</button></li>
+        </ul>
+        <form class="board__search" id="boardSearch" role="search" onsubmit="return false;">
+          <input type="search" id="boardSearchInput" placeholder="제목·내용 검색" aria-label="소식 검색">
+          <button type="submit" aria-label="검색">🔍</button>
+        </form>
       </div>
+
+      <!-- 게시글 카드 그리드 -->
+      <ul class="news-grid" id="newsGrid" data-reveal></ul>
+
+      <!-- 결과 없음 -->
+      <p class="news-empty" id="newsEmpty" hidden>검색 결과가 없습니다.</p>
+
+      <!-- 페이지네이션 -->
+      <nav class="pagination" id="newsPagination" aria-label="페이지 이동"></nav>
+
     </div>
   </section>
+
+  <!-- 게시글 상세 모달 -->
+  <div class="news-modal" id="newsModal" aria-hidden="true">
+    <div class="news-modal__dim" id="newsModalDim"></div>
+    <article class="news-modal__panel" role="dialog" aria-modal="true" aria-labelledby="newsModalTitle">
+      <button type="button" class="news-modal__close" id="newsModalClose" aria-label="닫기">×</button>
+      <span class="news-card__cat" id="newsModalCat"></span>
+      <h3 class="news-modal__title" id="newsModalTitle"></h3>
+      <div class="news-modal__meta">
+        <span id="newsModalDate"></span>
+        <span id="newsModalViews"></span>
+      </div>
+      <div class="news-modal__thumb" id="newsModalThumb"></div>
+      <div class="news-modal__body" id="newsModalBody"></div>
+    </article>
+  </div>
 </main>
 
 <!-- 공통 푸터 -->
@@ -45,4 +82,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../include/header.js"></script>
 <script src="../include/footer.js"></script>
-<scri
+<script src="../js/include.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/news.js"></script>
+</body>
+</html>
