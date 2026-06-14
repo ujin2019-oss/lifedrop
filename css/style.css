@@ -1142,8 +1142,7 @@ em { font-style: normal; }
   display: block;
   font-size: var(--fs-h2);
   font-weight: var(--fw-black);
-  color: var(--color-sub);
-  -webkit-text-stroke: 1px var(--color-main);
+  color: var(--color-main);
   line-height: 1;
   margin-bottom: 12px;
 }
